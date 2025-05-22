@@ -5,12 +5,13 @@
     --secondary: #4ECDC4;
     --light: #F7FFF7;
     --dark: #292F36;
-    --gray: #131414;
-    --light-gray: #1c83e9;
+    --gray: #060900;
+    --gold:#777d6c;
+    --light-gray: #F8F9FA;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
-    --veg: #4CAF50;
-    --non-veg: #F44336;
+    --veg: #24e42a;
+    --non-veg: #f4190a;
     --diet: #2196F3;
 }
 
@@ -48,6 +49,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
 }
 
 /* Header Styles */
