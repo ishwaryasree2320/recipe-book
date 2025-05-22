@@ -30,6 +30,170 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize recipes array
     let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
 
+if (recipes.length === 0) {
+    recipes = [
+        // 20 Vegetarian Recipes
+        {
+            id: '1',
+            name: 'Vegetable Stir Fry',
+            category: 'Vegetarian',
+            ingredients: ['Bell Pepper', 'Broccoli', 'Carrot', 'Soy Sauce', 'Garlic', 'Ginger', 'Sesame Oil'],
+            steps: ['Chop all vegetables', 'Heat oil in pan', 'Add garlic and ginger', 'Add vegetables and stir fry', 'Add soy sauce'],
+            time: '20 mins',
+            servings: '2',
+            image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        },
+        {
+            id: '2',
+            name: 'Margherita Pizza',
+            category: 'Vegetarian',
+            ingredients: ['Pizza Dough', 'Tomato Sauce', 'Mozzarella Cheese', 'Basil', 'Olive Oil'],
+            steps: ['Roll out dough', 'Spread tomato sauce', 'Add cheese', 'Bake at 450°F for 12 minutes', 'Add fresh basil'],
+            time: '30 mins',
+            servings: '4',
+            image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        },
+        {
+            id: '3',
+            name: 'Caprese Salad',
+            category: 'Vegetarian',
+            ingredients: ['Tomatoes', 'Fresh Mozzarella', 'Basil', 'Balsamic Glaze', 'Olive Oil', 'Salt', 'Pepper'],
+            steps: ['Slice tomatoes and mozzarella', 'Arrange on plate with basil', 'Drizzle with olive oil and balsamic', 'Season with salt and pepper'],
+            time: '10 mins',
+            servings: '2',
+            image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        },
+        {
+            id: '4',
+            name: 'Vegetable Lasagna',
+            category: 'Vegetarian',
+            ingredients: ['Lasagna Noodles', 'Ricotta Cheese', 'Spinach', 'Zucchini', 'Tomato Sauce', 'Mozzarella Cheese'],
+            steps: ['Cook noodles', 'Layer with vegetables and cheese', 'Bake at 375°F for 45 minutes', 'Let rest before serving'],
+            time: '1 hour',
+            servings: '6',
+            image: 'https://images.unsplash.com/photo-1629115916087-7e8c114a24ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        },
+        {
+            id: '5',
+            name: 'Hummus Wrap',
+            category: 'Vegetarian',
+            ingredients: ['Whole Wheat Tortilla', 'Hummus', 'Cucumber', 'Tomato', 'Red Onion', 'Lettuce'],
+            steps: ['Spread hummus on tortilla', 'Add sliced vegetables', 'Roll tightly and slice in half'],
+            time: '10 mins',
+            servings: '1',
+            image: 'https://images.unsplash.com/photo-1546069901-4562a0d1c4ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        },
+        // 15 more vegetarian recipes...
+
+        // 20 Non-Vegetarian Recipes
+        {
+            id: '21',
+            name: 'Grilled Chicken',
+            category: 'Non-Vegetarian',
+            ingredients: ['Chicken Breast', 'Olive Oil', 'Lemon', 'Garlic', 'Rosemary', 'Salt', 'Pepper'],
+            steps: ['Marinate chicken', 'Preheat grill', 'Grill for 6-8 minutes per side', 'Rest before serving'],
+            time: '25 mins',
+            servings: '2',
+            image: 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        },
+        {
+            id: '22',
+            name: 'Beef Burger',
+            category: 'Non-Vegetarian',
+            ingredients: ['Ground Beef', 'Burger Buns', 'Lettuce', 'Tomato', 'Onion', 'Cheese', 'Pickles'],
+            steps: ['Form patties', 'Season with salt and pepper', 'Grill or pan fry', 'Assemble burger with toppings'],
+            time: '20 mins',
+            servings: '4',
+            image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        },
+        {
+            id: '23',
+            name: 'Grilled Salmon',
+            category: 'Non-Vegetarian',
+            ingredients: ['Salmon Fillet', 'Lemon', 'Dill', 'Olive Oil', 'Salt', 'Pepper'],
+            steps: ['Season salmon', 'Preheat grill', 'Grill for 4-5 minutes per side', 'Serve with lemon'],
+            time: '15 mins',
+            servings: '2',
+            image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        },
+        {
+            id: '24',
+            name: 'Beef Tacos',
+            category: 'Non-Vegetarian',
+            ingredients: ['Ground Beef', 'Taco Shells', 'Lettuce', 'Tomato', 'Cheese', 'Sour Cream', 'Taco Seasoning'],
+            steps: ['Brown beef with seasoning', 'Prepare toppings', 'Warm taco shells', 'Assemble tacos'],
+            time: '25 mins',
+            servings: '4',
+            image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        },
+        {
+            id: '25',
+            name: 'Chicken Curry',
+            category: 'Non-Vegetarian',
+            ingredients: ['Chicken Thighs', 'Onion', 'Garlic', 'Ginger', 'Curry Powder', 'Coconut Milk', 'Tomato'],
+            steps: ['Brown chicken', 'Sauté onions, garlic, ginger', 'Add spices and coconut milk', 'Simmer for 20 minutes'],
+            time: '40 mins',
+            servings: '4',
+            image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        },
+        // 15 more non-vegetarian recipes...
+
+        // 10 Diet Recipes
+        {
+            id: '41',
+            name: 'Quinoa Salad',
+            category: 'Diet',
+            ingredients: ['Quinoa', 'Cucumber', 'Tomato', 'Red Onion', 'Lemon', 'Olive Oil', 'Parsley'],
+            steps: ['Cook quinoa', 'Chop vegetables', 'Mix with quinoa', 'Add lemon juice and olive oil', 'Garnish with parsley'],
+            time: '25 mins',
+            servings: '2',
+            image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        },
+        {
+            id: '42',
+            name: 'Greek Yogurt Parfait',
+            category: 'Diet',
+            ingredients: ['Greek Yogurt', 'Mixed Berries', 'Granola', 'Honey'],
+            steps: ['Layer yogurt in glass', 'Add berries', 'Sprinkle granola', 'Drizzle with honey'],
+            time: '5 mins',
+            servings: '1',
+            image: 'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        },
+        {
+            id: '43',
+            name: 'Grilled Chicken Salad',
+            category: 'Diet',
+            ingredients: ['Grilled Chicken', 'Mixed Greens', 'Cherry Tomatoes', 'Cucumber', 'Olive Oil', 'Lemon Juice'],
+            steps: ['Chop vegetables', 'Slice chicken', 'Combine in bowl', 'Dress with olive oil and lemon'],
+            time: '15 mins',
+            servings: '2',
+            image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        },
+        {
+            id: '44',
+            name: 'Avocado Toast',
+            category: 'Diet',
+            ingredients: ['Whole Grain Bread', 'Avocado', 'Egg', 'Red Pepper Flakes', 'Salt', 'Pepper'],
+            steps: ['Toast bread', 'Mash avocado', 'Fry or poach egg', 'Assemble toast with avocado and egg', 'Season to taste'],
+            time: '10 mins',
+            servings: '1',
+            image: 'https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        },
+        {
+            id: '45',
+            name: 'Vegetable Soup',
+            category: 'Diet',
+            ingredients: ['Carrots', 'Celery', 'Onion', 'Garlic', 'Vegetable Broth', 'Tomatoes', 'Green Beans'],
+            steps: ['Sauté vegetables', 'Add broth and tomatoes', 'Simmer for 20 minutes', 'Season to taste'],
+            time: '30 mins',
+            servings: '4',
+            image: 'https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+        }
+        // 5 more diet recipes...
+    ];
+    
+    localStorage.setItem('recipes', JSON.stringify(recipes));
+}
     // If no recipes exist, initialize with sample data
     if (recipes.length === 0) {
         recipes = [
