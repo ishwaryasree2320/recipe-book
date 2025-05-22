@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-image"></div>
+    
+    <div class="app-container">
+        <!-- Header with Navigation -->
+        <header class="app-header">
+            <div class="logo">RecipeBook</div>
+            <nav class="nav-buttons">
+                <button class="nav-btn" id="add-recipe-btn">
+                    <span class="btn-text">Add Recipe</span>
+                    <span class="btn-icon"><i class="fas fa-plus"></i></span>
+                </button>
+                <button class="nav-btn" id="view-recipes-btn">
+                    <span class="btn-text">View Recipes</span>
+                    <span class="btn-icon"><i class="fas fa-book"></i></span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Homepage Content -->
+        <main class="home-content" id="home-section">
+            <div class="hero-text">
+                <h1>Discover Amazing Recipes</h1>
+                <p>Find the perfect recipe for any occasion</p>
+            </div>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search by ingredients...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="autocomplete-results" id="autocomplete-results"></div>
+            </div>
+        </main>
+
+        <!-- Add Recipe Section -->
+        <section class="form-section" id="add-recipe-section">
+            <button class="back-btn" id="back-from-add">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </button>
+            <h2><i class="fas fa-plus-circle"></i> Add New Recipe</h2>
+            <form id="recipe-form">
+                <div class="form-group">
+                    <label>Recipe Name</label>
+                    <input type="text" id="recipe-name" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="recipe-category" required>
+                            <option value="">Select Category</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                            <option value="Non-Vegetarian">Non-Vegetarian</option>
+                            <option value="Diet">Diet Food</option>
+                            <option value="dessert">"Dessert"</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Prep Time</label>
+                        <input type="text" id="recipe-time" placeholder="30 mins">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Ingredients (one per line)</label>
+                    <textarea id="recipe-ingredients" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Instructions</label>
+                    <textarea id="recipe-steps" rows="8" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Recipe Image</label>
+                    <div class="image-upload">
+                        <label for="recipe-image" class="upload-label">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Click to upload image</span>
+                        </label>
+                        <input type="file" id="recipe-image" accept="image/*">
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-save"></i> Save Recipe
+                </button>
+            </form>
+        </section>
+
+        <!-- View Recipes Section -->
+        <section class="recipes-section" id="view-recipes-section">
+            <button class="back-btn" id="back-from-view">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </button>
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All Recipes</button>
+                <button class="category-tab" data-category="Vegetarian">Vegetarian</button>
+                <button class="category-tab" data-category="Non-Vegetarian">Non-Veg</button>
+                <button class="category-tab" data-category="Diet">Diet Foods</button>
+                <button class="category-tab" data-category="dessert">Dessert</button>
+            </div>
+            
+            <div class="recipes-container" id="recipes-container">
+                <!-- Recipes will be inserted here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Recipe Detail Modal -->
+        <div class="modal" id="recipe-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-header">
+                    <h2 id="modal-title"></h2>
+                    <div class="recipe-meta" id="modal-meta"></div>
+                </div>
+                <img id="modal-image" src="" alt="Recipe Image">
+                <div class="modal-body">
+                    <div class="ingredients-section">
+                        <h3><i class="fas fa-list"></i> Ingredients</h3>
+                        <ul id="modal-ingredients"></ul>
+                    </div>
+                    <div class="instructions-section">
+                        <h3><i class="fas fa-list-ol"></i> Instructions</h3>
+                        <ol id="modal-steps"></ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
