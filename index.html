@@ -4,139 +4,266 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Book</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background-image"></div>
-    
-    <div class="app-container">
-        <!-- Header with Navigation -->
-        <header class="app-header">
-            <div class="logo">RecipeBook</div>
-            <nav class="nav-buttons">
-                <button class="nav-btn" id="add-recipe-btn">
-                    <span class="btn-text">Add Recipe</span>
-                    <span class="btn-icon"><i class="fas fa-plus"></i></span>
-                </button>
-                <button class="nav-btn" id="view-recipes-btn">
-                    <span class="btn-text">View Recipes</span>
-                    <span class="btn-icon"><i class="fas fa-book"></i></span>
-                </button>
-            </nav>
-        </header>
-
-        <!-- Homepage Content -->
-        <main class="home-content" id="home-section">
-            <div class="hero-text">
-                <h1>Discover Amazing Recipes</h1>
-                <p>Find the perfect recipe for any occasion</p>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>RecipeBook</span>
             </div>
             
-            <div class="search-container">
-                <div class="search-box">
-                    <input type="text" id="search-input" placeholder="Search by ingredients...">
-                    <button id="search-btn"><i class="fas fa-search"></i></button>
-                </div>
-                <div class="autocomplete-results" id="autocomplete-results"></div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active" id="home-link"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="nav-link" id="add-recipe-link"><i class="fas fa-plus-circle"></i> Add Recipe</a>
+                <a href="#" class="nav-link" id="view-recipes-link"><i class="fas fa-book-open"></i> My Recipes</a>
+                <a href="#" class="nav-link" id="about-link"><i class="fas fa-info-circle"></i> About</a>
             </div>
-        </main>
+            
+            <div class="auth-buttons">
+                <button id="login-btn" class="auth-btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+                <button id="signup-btn" class="auth-btn"><i class="fas fa-user-plus"></i> Sign Up</button>
+                <div id="user-profile" class="hidden">
+                    <img id="user-avatar" src="" alt="User Avatar">
+                    <span id="username-display"></span>
+                    <button id="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home-section" class="active-section">
+            <div class="hero">
+                <h1>Discover & Share Amazing Recipes</h1>
+                <p>Join our community of food lovers and explore thousands of delicious recipes</p>
+                
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="main-search" placeholder="Search recipes...">
+                        <button id="main-search-btn"><i class="fas fa-search"></i></button>
+                        <div id="autocomplete-results" class="autocomplete-results"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="featured-recipes">
+                <h2>Featured Recipes</h2>
+                <div class="recipes-grid" id="featured-recipes-grid">
+                    <!-- Featured recipes will be loaded here -->
+                </div>
+            </div>
+        </section>
 
         <!-- Add Recipe Section -->
-        <section class="form-section" id="add-recipe-section">
-            <button class="back-btn" id="back-from-add">
-                <i class="fas fa-arrow-left"></i> Back to Home
-            </button>
-            <h2><i class="fas fa-plus-circle"></i> Add New Recipe</h2>
-            <form id="recipe-form">
+        <section id="add-recipe-section" class="hidden">
+            <h2>Add New Recipe</h2>
+            <form id="recipe-form" class="form-3d">
                 <div class="form-group">
-                    <label>Recipe Name</label>
+                    <label for="recipe-name">Recipe Name*</label>
                     <input type="text" id="recipe-name" required>
                 </div>
                 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Category</label>
-                        <select id="recipe-category" required>
-                            <option value="">Select Category</option>
-                            <option value="Vegetarian">Vegetarian</option>
-                            <option value="Non-Vegetarian">Non-Vegetarian</option>
-                            <option value="Diet">Diet Food</option>
-                            <option value="dessert">"Dessert"</option>
-                        </select>
+                <div class="form-group">
+                    <label for="recipe-category">Category</label>
+                    <select id="recipe-category">
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                        <option value="dessert">Dessert</option>
+                        <option value="snack">Snack</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="recipe-ingredients">Ingredients*</label>
+                    <div class="ingredients-container">
+                        <div class="ingredient-input">
+                            <input type="text" class="ingredient" placeholder="Ingredient">
+                            <button type="button" class="remove-ingredient"><i class="fas fa-times"></i></button>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Prep Time</label>
-                        <input type="text" id="recipe-time" placeholder="30 mins">
+                    <button type="button" id="add-ingredient" class="btn-secondary">
+                        <i class="fas fa-plus"></i> Add Ingredient
+                    </button>
+                </div>
+                
+                <div class="form-group">
+                    <label for="recipe-steps">Preparation Steps*</label>
+                    <div class="steps-container">
+                        <div class="step-input">
+                            <textarea class="step" placeholder="Step"></textarea>
+                            <button type="button" class="remove-step"><i class="fas fa-times"></i></button>
+                        </div>
                     </div>
+                    <button type="button" id="add-step" class="btn-secondary">
+                        <i class="fas fa-plus"></i> Add Step
+                    </button>
                 </div>
-
+                
                 <div class="form-group">
-                    <label>Ingredients (one per line)</label>
-                    <textarea id="recipe-ingredients" rows="5" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Instructions</label>
-                    <textarea id="recipe-steps" rows="8" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Recipe Image</label>
+                    <label for="recipe-image">Recipe Image</label>
                     <div class="image-upload">
+                        <input type="file" id="recipe-image" accept="image/*">
                         <label for="recipe-image" class="upload-label">
                             <i class="fas fa-cloud-upload-alt"></i>
-                            <span>Click to upload image</span>
+                            <span>Choose an image</span>
                         </label>
-                        <input type="file" id="recipe-image" accept="image/*">
+                        <div id="image-preview" class="hidden"></div>
                     </div>
                 </div>
-
-                <button type="submit" class="submit-btn">
+                
+                <div class="form-group">
+                    <label for="recipe-public">
+                        <input type="checkbox" id="recipe-public" checked>
+                        Make this recipe public
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn-primary">
                     <i class="fas fa-save"></i> Save Recipe
                 </button>
             </form>
         </section>
 
         <!-- View Recipes Section -->
-        <section class="recipes-section" id="view-recipes-section">
-            <button class="back-btn" id="back-from-view">
-                <i class="fas fa-arrow-left"></i> Back to Home
-            </button>
-            <div class="category-tabs">
-                <button class="category-tab active" data-category="all">All Recipes</button>
-                <button class="category-tab" data-category="Vegetarian">Vegetarian</button>
-                <button class="category-tab" data-category="Non-Vegetarian">Non-Veg</button>
-                <button class="category-tab" data-category="Diet">Diet Foods</button>
-                <button class="category-tab" data-category="dessert">Dessert</button>
+        <section id="view-recipes-section" class="hidden">
+            <div class="section-header">
+                <h2>My Recipes</h2>
+                <div class="filter-options">
+                    <select id="recipe-filter">
+                        <option value="all">All Recipes</option>
+                        <option value="public">Public Recipes</option>
+                        <option value="private">Private Recipes</option>
+                    </select>
+                </div>
             </div>
             
-            <div class="recipes-container" id="recipes-container">
-                <!-- Recipes will be inserted here by JavaScript -->
+            <div class="recipes-grid" id="user-recipes-grid">
+                <!-- User recipes will be loaded here -->
             </div>
         </section>
 
-        <!-- Recipe Detail Modal -->
-        <div class="modal" id="recipe-modal">
-            <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <div class="modal-header">
-                    <h2 id="modal-title"></h2>
-                    <div class="recipe-meta" id="modal-meta"></div>
+        <!-- About Section -->
+        <section id="about-section" class="hidden">
+            <div class="about-container">
+                <div class="about-card">
+                    <h2>About RecipeBook</h2>
+                    <p>RecipeBook is a platform for food enthusiasts to discover, create, and share delicious recipes with the world. Our mission is to bring people together through the joy of cooking.</p>
+                    <p>Whether you're a professional chef or a home cook, RecipeBook provides the tools you need to organize your recipes and connect with other food lovers.</p>
                 </div>
-                <img id="modal-image" src="" alt="Recipe Image">
-                <div class="modal-body">
-                    <div class="ingredients-section">
-                        <h3><i class="fas fa-list"></i> </h3>Ingredients</b></h3>
-                        <ul id="modal-ingredients"></ul>
-                    </div>
-                    <div class="instructions-section">
-                        <h3><i class="fas fa-list-ol"></i> Instructions</h3>
-                        <ol id="modal-steps"></ol>
+                
+                <div class="about-card">
+                    <h2>About The Developer</h2>
+                    <div class="developer-info">
+                        <img src="C:\Users\ishwa\recipe-book\images\ishu.jpg" alt="Developer" class="developer-img">
+                        <div class="developer-details">
+                            <h3>Ishwarya Sree V</h3>
+                            <p>Full Stack Developer & Food Enthusiast</p>
+                            <div class="social-links">
+                                <a href="https://github.com/ishwaryasree2320"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/contactishwarya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+                                <a href="ishwaryasree.work@gmail.com"><i class="fab fa-mail"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Search Results Section -->
+        <section id="search-results-section" class="hidden">
+            <div class="section-header">
+                <h2>Search Results</h2>
+                <button id="back-to-home" class="btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </button>
+            </div>
+            
+            <div class="recipes-grid" id="search-results-grid">
+                <!-- Search results will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Auth Modals -->
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content auth-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                
+                <p class="auth-switch">
+                    Don't have an account? <a href="#" id="show-signup">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div id="signup-modal" class="modal hidden">
+        <div class="modal-content auth-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Create Account</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" required>
+                </div>
+                
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </button>
+                
+                <p class="auth-switch">
+                    Already have an account? <a href="#" id="show-login">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Recipe Details Modal -->
+    <div id="recipe-details-modal" class="modal hidden">
+        <div class="modal-content recipe-modal">
+            <span class="close-modal">&times;</span>
+            <div id="recipe-modal-content"></div>
         </div>
     </div>
 
