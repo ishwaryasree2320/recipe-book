@@ -32,6 +32,7 @@ recipe-book-main/
 ├── ishu.jpg
 ├── receipes.bg.jpg
 └── recipebook.webp
+
 ---
 
 ## ✨ Features
@@ -48,8 +49,16 @@ recipe-book-main/
 3. That's it! Your recipe book is ready to go.
 
 ## 📸 Preview
+###### Home page 
+<img hieght ="150" width="150" src="https://github.com/ishwaryasree2320/tic-tac-toe-game-/blob/main/assests/Screenshot%20(287).png?raw=true"/>
 
-![Recipe Book Preview](./images/recipebook.webp)
+###### Add recipe
+<img hieght ="150" width="150" src="https://github.com/ishwaryasree2320/tic-tac-toe-game-/blob/main/assests/Screenshot%20(288).png?raw=true"/>
+
+###### View recipe
+<img hieght ="150" width="150" src="https://github.com/ishwaryasree2320/tic-tac-toe-game-/blob/main/assests/Screenshot%20(289).png?raw=true"/>
+
+---
 
 ## 🛠️ Technologies Used
 
