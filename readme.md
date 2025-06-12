@@ -61,6 +61,8 @@ recipe-book-main/
 ###### View recipe
 <img hieght ="150" width="150" src="https://github.com/ishwaryasree2320/recipe-book/blob/main/images/Screenshot%20(297).png?raw=true"/>
 
+###### Admin page
+<img hieght ="150" width="150" src="[https://github.com/ishwaryasree2320/recipe-book/blob/main/images/Screenshot%20(297).png?raw=true](https://github.com/ishwaryasree2320/recipe-book/blob/main/images/Screenshot%20(299).png?raw=true)"/>
 
 ---
 
