@@ -4,12 +4,29 @@ A visually appealing and user-friendly **recipe book website** that allows users
 
 ---
 
-## 🚀 Features
+## Features ✨
 
-- ✅ Interactive recipe cards with images  
-- ✅ Clean and responsive layout  
-- ✅ Modern design with visual aesthetics  
-- ✅ Easy to modify and expand (add more recipes)
+### User Authentication
+- Secure login/signup with localStorage
+- Admin and regular user roles
+- Profile management
+
+### Recipe Management
+- 📝 Create recipes with ingredients and steps
+- ✏️ Edit existing recipes
+- 🗑️ Delete recipes
+- 🔒 Public/private recipe visibility
+
+### Discovery
+- 🔍 Search by recipe name or ingredients
+- 🏷️ Filter by categories (breakfast, lunch, etc.)
+- 💡 Autocomplete search suggestions
+
+### UI/UX
+- 📱 Fully responsive design
+- 🎨 3D card animations
+- 🌈 Modern color scheme
+- ⚡ Fast and intuitive interface
 
 ---
 
@@ -35,12 +52,17 @@ recipe-book-main/
 
 ---
 
-## ✨ Features
+## Usage 📖
 
-- Fully responsive and user-friendly design
-- Recipes showcased with images
-- Smooth UI animations
-- Organized layout with cards and sections
+>- Default Accounts
+
+
+| Email	              | Password   	| Role |
+|---------------------|-------------|------|
+|admin@example.com    |admin123	    |Admin |
+|marie@example.com    |password123	|User  |
+|giovanni@example.com	|password123	|User  |
+-------------------------------------------
 
 ## 🚀 How to Run
 
