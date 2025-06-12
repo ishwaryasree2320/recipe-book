@@ -62,7 +62,7 @@ recipe-book-main/
 <img hieght ="150" width="150" src="https://github.com/ishwaryasree2320/recipe-book/blob/main/images/Screenshot%20(297).png?raw=true"/>
 
 ###### Admin page
-<img hieght ="150" width="150" src="[https://github.com/ishwaryasree2320/recipe-book/blob/main/images/Screenshot%20(297).png?raw=true](https://github.com/ishwaryasree2320/recipe-book/blob/main/images/Screenshot%20(299).png?raw=true)"/>
+<img hieght ="150" width="150" src="https://github.com/ishwaryasree2320/recipe-book/blob/main/images/Screenshot%20(299).png?raw=true"/>
 
 ---
 
