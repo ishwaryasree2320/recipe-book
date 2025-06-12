@@ -98,10 +98,12 @@ recipe-book-main/
 
 - **Ishwarya Sree V**  
   [GitHub Profile](https://github.com/ishwaryasree2320)
+  
+  ## 📫 Contact Me
 
-## 📄 License
+📧 Email: ishwaryasree.work@gmail.com 
 
-This project is licensed under the MIT License - feel free to use and modify as needed!
+🔗 LinkedIn: [linkedin.com/in/ishwarya-sree-v](https://www.linkedin.com/in/contactishwarya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
 ---
 
