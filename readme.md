@@ -49,14 +49,18 @@ recipe-book-main/
 3. That's it! Your recipe book is ready to go.
 
 ## 📸 Preview
+###### Login page
+<img hieght ="150" width="150" src="https://github.com/ishwaryasree2320/recipe-book/blob/main/images/Screenshot%20(295).png?raw=true"/>
+
 ###### Home page 
-<img hieght ="150" width="150" src="https://github.com/ishwaryasree2320/tic-tac-toe-game-/blob/main/assests/Screenshot%20(287).png?raw=true"/>
+<img hieght ="150" width="150" src="https://github.com/ishwaryasree2320/recipe-book/blob/main/images/Screenshot%20(294).png?raw=true"/>
 
 ###### Add recipe
-<img hieght ="150" width="150" src="https://github.com/ishwaryasree2320/tic-tac-toe-game-/blob/main/assests/Screenshot%20(288).png?raw=true"/>
+<img hieght ="150" width="150" src="https://github.com/ishwaryasree2320/recipe-book/blob/main/images/Screenshot%20(296).png?raw=true"/>
 
 ###### View recipe
-<img hieght ="150" width="150" src="https://github.com/ishwaryasree2320/tic-tac-toe-game-/blob/main/assests/Screenshot%20(289).png?raw=true"/>
+<img hieght ="150" width="150" src="https://github.com/ishwaryasree2320/recipe-book/blob/main/images/Screenshot%20(297).png?raw=true"/>
+
 
 ---
 
