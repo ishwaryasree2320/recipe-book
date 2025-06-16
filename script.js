@@ -175,7 +175,23 @@ function setupEventListeners() {
     if (hamburger) {
         hamburger.addEventListener('click', toggleMobileNav);
     }
+    
+    function toggleMobileNav() {
+    const mobileNav = document.querySelector('.nav-links');
+    const hamburger = document.getElementById('hamburger');
 
+    if (mobileNav) {
+        mobileNav.classList.toggle('show'); // This relies on the CSS `.show` toggle
+        // Update hamburger icon
+        if (mobileNav.classList.contains('show')) {
+            hamburger.innerHTML = '<i class="fas fa-times"></i>';
+            document.body.style.overflow = 'hidden';
+        } else {
+            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            document.body.style.overflow = '';
+        }
+    }
+}
     // Auth
     const loginBtn = document.getElementById('login-btn');
     if (loginBtn) {
